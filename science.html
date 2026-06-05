@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Science — Biohacks</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<style>
+  /* === SCIENCE PAGE HERO === */
+  .science-page-hero {
+    padding: 160px 0 80px;
+    background: linear-gradient(160deg, #e4f0df 0%, var(--cream) 60%);
+    position: relative;
+    overflow: hidden;
+  }
+  .science-page-hero::before {
+    content: '';
+    position: absolute;
+    top: -80px; left: -80px;
+    width: 400px; height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(160,210,150,0.2) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .science-page-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 500;
+    color: var(--forest);
+    line-height: 1.15;
+    margin: 1rem 0 1.5rem;
+  }
+  .science-page-title em { font-style: italic; color: var(--forest-mid); }
+  .science-page-sub {
+    font-size: 1.05rem;
+    color: var(--text-mid);
+    line-height: 1.85;
+    max-width: 640px;
+  }
+
+  /* === INTRO === */
+  .science-page-intro { padding: 6rem 3rem; }
+  .science-intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+  .about-body {
+    font-size: 0.95rem;
+    color: var(--text-mid);
+    line-height: 1.9;
+    margin-bottom: 1.2rem;
+  }
+  .science-intro-box {
+    background: var(--forest);
+    border-radius: 8px;
+    padding: 2.5rem;
+    position: sticky;
+    top: 100px;
+  }
+  .science-intro-mark {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 4rem;
+    color: var(--sage);
+    line-height: 0.6;
+    margin-bottom: 1.2rem;
+  }
+  .science-intro-quote {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.9);
+    line-height: 1.8;
+    font-style: italic;
+    margin-bottom: 1.2rem;
+  }
+  .science-intro-source { font-size: 0.78rem; color: var(--sage); line-height: 1.5; }
+
+  /* === MATERIAL CARDS === */
+  .science-materials-section { background: linear-gradient(135deg, #f0f7ed 0%, #e8f4e4 100%); }
+  .material-cards { display: flex; flex-direction: column; gap: 2rem; margin-top: 0; }
+  .material-card {
+    background: white;
+    border-radius: 8px;
+    padding: 2.5rem;
+    border-left: 4px solid var(--sage);
+    transition: all var(--transition);
+  }
+  .material-card:hover {
+    border-left-color: var(--forest);
+    box-shadow: -4px 0 30px rgba(45,90,39,0.1);
+    transform: translateX(4px);
+  }
+  .material-card-header {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    margin-bottom: 1.2rem;
+  }
+  .material-icon { font-size: 2rem; }
+  .material-title {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--forest);
+    margin-bottom: 0.2rem;
+  }
+  .material-badge {
+    display: inline-block;
+    background: var(--sage-pale);
+    color: var(--forest);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 0.2rem 0.7rem;
+    border-radius: 20px;
+    border: 1px solid var(--sage-light);
+  }
+  .material-desc {
+    font-size: 0.92rem;
+    color: var(--text-mid);
+    line-height: 1.85;
+    margin-bottom: 1.5rem;
+  }
+  .material-evidence {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.2rem;
+  }
+  .evidence-item { background: var(--sage-bg); border-radius: 6px; padding: 1.2rem 1.4rem; }
+  .evidence-label {
+    display: block;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--forest);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  .evidence-text { font-size: 0.82rem; color: var(--text-mid); line-height: 1.75; }
+
+  /* === AVOID === */
+  .science-avoid { padding: 6rem 3rem; max-width: 1300px; margin: 0 auto; }
+  .avoid-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+  .avoid-card {
+    padding: 2rem;
+    border: 1px solid var(--sage-light);
+    border-radius: 8px;
+    transition: all var(--transition);
+  }
+  .avoid-card:hover { border-color: var(--forest); box-shadow: 0 8px 30px rgba(45,90,39,0.08); }
+  .avoid-icon { font-size: 1.5rem; margin-bottom: 0.8rem; }
+  .avoid-title {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--forest);
+    margin-bottom: 0.6rem;
+  }
+  .avoid-text { font-size: 0.85rem; color: var(--text-mid); line-height: 1.8; }
+
+  /* === REFERENCES === */
+  .science-refs-section { background: var(--sage-bg); }
+  .refs-list { display: flex; flex-direction: column; gap: 0; }
+  .ref-item {
+    display: flex;
+    gap: 1.5rem;
+    align-items: baseline;
+    padding: 1.2rem 0;
+    border-bottom: 1px solid var(--sage-light);
+  }
+  .ref-item:last-child { border-bottom: none; }
+  .ref-num {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    color: var(--sage);
+    font-weight: 600;
+    flex-shrink: 0;
+    width: 2.5rem;
+  }
+  .ref-text { font-size: 0.82rem; color: var(--text-mid); line-height: 1.75; }
+  .ref-text em { color: var(--forest-mid); }
+
+  /* === SCIENCE CTA === */
+  .science-cta { text-align:center; padding: 5rem 3rem; max-width: 1300px; margin: 0 auto; }
+
+  @media (max-width: 900px) {
+    .science-intro-grid { grid-template-columns: 1fr; }
+    .science-intro-box { position: static; }
+    .avoid-grid { grid-template-columns: 1fr; }
+    .material-evidence { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 600px) {
+    .science-page-hero { padding: 120px 1.5rem 60px; }
+    .science-page-intro, .science-avoid, .science-cta { padding-left: 1.5rem; padding-right: 1.5rem; }
+    .material-card { padding: 1.6rem; }
+    .material-card-header { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body class="inner-page on-light">
+
+  <!-- ═══════════════ HEADER ═══════════════ -->
+  <header class="site-header" id="site-header">
+    <a href="index.html" class="site-logo">Biohacks</a>
+    <nav>
+      <ul class="site-nav">
+        <li><a href="index.html#products">Products</a></li>
+        <li><a href="science.html" aria-current="page">Science</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="index.html#products" class="nav-cta">Shop</a></li>
+        <li>
+          <a href="#" class="cart-icon" aria-label="Cart">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+              <line x1="3" y1="6" x2="21" y2="6"/>
+              <path d="M16 10a4 4 0 01-8 0"/>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ═══════════════ HERO ═══════════════ -->
+  <section class="science-page-hero" data-screen-label="Science hero">
+    <div class="section">
+      <span class="section-label">Scientific basis</span>
+      <h1 class="science-page-title">We don't sell fear.<br>We sell <em>evidence</em></h1>
+      <p class="science-page-sub">Every claim at Biohacks is backed by studies published in peer-reviewed journals, official certifications, or regulations from recognized agencies. Here's the source.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════ INTRO ═══════════════ -->
+  <div class="science-page-intro" data-screen-label="Science intro">
+    <div class="science-intro-grid">
+      <div>
+        <span class="section-label reveal">The real problem</span>
+        <h2 class="section-title reveal reveal-delay-1">Household materials<br>are not <em>neutral</em></h2>
+        <p class="about-body reveal reveal-delay-2">For decades we assumed that if something was in the kitchen or the bathroom, it was safe. Regulations existed, products were approved. What could go wrong?</p>
+        <p class="about-body reveal reveal-delay-3">The answer came in the form of studies: microplastics in human blood, PFAS (perfluoroalkyl compounds) in adipose tissue, heavy metals leaching from cheap coatings. Not as a theoretical risk, but as findings documented in real human samples.</p>
+        <p class="about-body reveal reveal-delay-3">At Biohacks we start from the available evidence and select materials that have demonstrated their safety for centuries before the most demanding regulatory bodies.</p>
+      </div>
+      <div class="science-intro-box reveal reveal-delay-2">
+        <div class="science-intro-quote">
+          <span class="science-intro-mark">"</span>
+          Microplastics have been detected in human blood, lungs, placenta, and breast milk. Their presence in human tissue is no longer debatable.
+        </div>
+        <p class="science-intro-source">— Ragusa et al., <em>Environment International</em>, 2021 / Leslie et al., <em>Environment International</em>, 2022</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════ BRAND BAND ═══════════════ -->
+  <section class="brand-band" data-screen-label="Brand band">
+    <img src="assets/biohacks-forest.png" alt="Biohacks — herramientas de hogar que protegen tu salud desde la raíz" loading="lazy" />
+  </section>
+
+  <!-- ═══════════════ MATERIALS ═══════════════ -->
+  <div class="section-full science-materials-section" data-screen-label="Materials">
+    <div class="section">
+      <span class="section-label reveal">The materials</span>
+      <h2 class="section-title reveal reveal-delay-1">What we use and<br><em>why</em> we use it</h2>
+      <p class="section-desc reveal reveal-delay-2" style="max-width:620px; margin:0 auto 3.5rem;">Four materials form the core of our catalog. Each has a documented safety profile and a concrete advantage over the synthetic alternative.</p>
+
+      <div class="material-cards">
+        <div class="material-card reveal">
+          <div class="material-card-header">
+            <span class="material-icon">⚙️</span>
+            <div>
+              <h3 class="material-title">316 Stainless Steel</h3>
+              <span class="material-badge">Surgical / food grade</span>
+            </div>
+          </div>
+          <p class="material-desc">316 steel (also called surgical or marine grade) contains molybdenum in its alloy, making it significantly more corrosion-resistant than 304. It's the standard in medical implants, food-processing equipment, and the pharmaceutical industry.</p>
+          <div class="material-evidence">
+            <div class="evidence-item">
+              <span class="evidence-label">Regulation</span>
+              <p class="evidence-text">The EFSA (European Food Safety Authority) classifies food-grade stainless steels as inert materials, safe for food contact, including at high temperatures.</p>
+            </div>
+            <div class="evidence-item">
+              <span class="evidence-label">Advantage over plastic</span>
+              <p class="evidence-text">It releases no microparticles, absorbs no flavors or odors, and doesn't degrade with washing. A well-cared-for product lasts decades with no change in its properties.</p>
+            </div>
+            <div class="evidence-item">
+              <span class="evidence-label">Versus Teflon (PTFE)</span>
+              <p class="evidence-text">A scratched Teflon pan can release up to 2.3 million microparticles per liter of water, according to Environmental Science &amp; Technology (2023). Steel has no such structural problem.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="material-card reveal reveal-delay-1">
+          <div class="material-card-header">
+            <span class="material-icon">🟤</span>
+            <div>
+              <h3 class="material-title">Copper</h3>
+              <span class="material-badge">EPA-registered antimicrobial</span>
+            </div>
+          </div>
+          <p class="material-desc">Copper is the only solid metal registered by the EPA (U.S. Environmental Protection Agency) as a material with antimicrobial properties. Its ability to destroy bacteria, viruses, and fungi has been validated in hospital settings.</p>
+          <div class="material-evidence">
+            <div class="evidence-item">
+              <span class="evidence-label">Key fact</span>
+              <p class="evidence-text">Copper eliminates over 99.9% of pathogenic bacteria (including E. coli and methicillin-resistant Staphylococcus aureus) within two hours of contact. — EPA Antimicrobial Copper Registration, 2008.</p>
+            </div>
+            <div class="evidence-item">
+              <span class="evidence-label">Historical use</span>
+              <p class="evidence-text">Egyptian, Greek, and Roman civilizations used copper vessels to preserve drinking water. Its use as an antimicrobial material is not a trend — it's a technology with 4,000 years of documented history.</p>
+            </div>
+            <div class="evidence-item">
+              <span class="evidence-label">Recommended use</span>
+              <p class="evidence-text">Ideal for frequent-contact surfaces (handles, faucets, kitchen utensils) where microbial load can be reduced passively and continuously without additional chemicals.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="material-card reveal reveal-delay-2">
+          <div class="material-card-header">
+            <span class="material-icon">🫙</span>
+            <div>
+              <h3 class="material-title">Borosilicate Glass</h3>
+              <span class="material-badge">Thermal resistance &amp; chemical purity</span>
+            </div>
+          </div>
+          <p class="material-desc">Borosilicate glass (known commercially as Pyrex) contains boron oxide, giving it very low thermal expansion. It withstands sudden temperature changes without breaking and doesn't react with acids, bases, or organic solvents.</p>
+          <div class="material-evidence">
+            <div class="evidence-item">
+              <span class="evidence-label">Chemical safety</span>
+              <p class="evidence-text">Unlike BPA-free plastics, which can still release other endocrine disruptors like BPS or BPF, borosilicate glass migrates no compounds into food or water under any normal use conditions.</p>
+            </div>
+            <div class="evidence-item">
+              <span class="evidence-label">Regulation</span>
+              <p class="evidence-text">Certified by the FDA and EFSA as safe for food contact. It's the standard in chemistry and pharmaceutical labs precisely because of its chemical inertness.</p>
+            </div>
+            <div class="evidence-item">
+              <span class="evidence-label">Versus "BPA-free" plastic</span>
+              <p class="evidence-text">Studies in Environmental Health Perspectives show that many BPA substitutes exhibit similar or even greater estrogenic activity. Glass removes the chemical-migration variable entirely.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="material-card reveal reveal-delay-3">
+          <div class="material-card-header">
+            <span class="material-icon">🌳</span>
+            <div>
+              <h3 class="material-title">Natural Wood (Teak &amp; Olive)</h3>
+              <span class="material-badge">Renewable &amp; naturally antibacterial</span>
+            </div>
+          </div>
+          <p class="material-desc">Teak and olive wood contain natural oils that give them some resistance to water and surface bacterial growth. They aren't sterile, but in normal culinary use they compare favorably with plastic boards.</p>
+          <div class="material-evidence">
+            <div class="evidence-item">
+              <span class="evidence-label">Wood vs. plastic: the definitive study</span>
+              <p class="evidence-text">A University of California Davis study (Dean O. Cliver, 1994, later replicated) showed that bacteria penetrating a wood board's surface don't reproduce and die as it dries, while on scratched plastic boards bacteria thrive in the grooves and resist standard washing.</p>
+            </div>
+            <div class="evidence-item">
+              <span class="evidence-label">No plastic residue</span>
+              <p class="evidence-text">A regularly used plastic cutting board introduces microscopic polyethylene fragments into food. Recent estimates suggest a person can ingest up to 50 g of microplastics a year from kitchen utensils.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════ WHAT WE AVOID ═══════════════ -->
+  <div class="science-avoid" data-screen-label="What we avoid">
+    <span class="section-label reveal">What we avoid</span>
+    <h2 class="section-title reveal reveal-delay-1">Materials we've<br>ruled out, and <em>why</em></h2>
+    <div class="avoid-grid">
+      <div class="avoid-card reveal">
+        <div class="avoid-icon">🚫</div>
+        <h3 class="avoid-title">PTFE / Teflon</h3>
+        <p class="avoid-text">PTFE coatings release PFAS compounds when overheated (&gt;260°C) and microparticles when scratched. PFAS are persistent compounds linked to hormonal dysfunction, liver damage, and elevated cardiovascular risk.</p>
+      </div>
+      <div class="avoid-card reveal reveal-delay-1">
+        <div class="avoid-icon">🚫</div>
+        <h3 class="avoid-title">Single-use and reusable plastics</h3>
+        <p class="avoid-text">Both BPA and its substitutes (BPS, BPF) show documented estrogenic activity. Moreover, all plastics release microparticles with use, heat, and time — regardless of their chemical composition.</p>
+      </div>
+      <div class="avoid-card reveal reveal-delay-2">
+        <div class="avoid-icon">🚫</div>
+        <h3 class="avoid-title">Uncoated aluminum</h3>
+        <p class="avoid-text">Aluminum is a reactive metal that can migrate into acidic foods (tomato, citrus, vinegar). The EFSA has set a tolerable weekly intake for aluminum and recommends limiting food contact, especially with acids.</p>
+      </div>
+      <div class="avoid-card reveal reveal-delay-3">
+        <div class="avoid-icon">🚫</div>
+        <h3 class="avoid-title">Synthetic sponges with triclosan</h3>
+        <p class="avoid-text">Triclosan, a biocide in many cleaning products, is classified as an endocrine disruptor and has been banned in cosmetics in the EU and in personal-care products in the U.S., yet it persists in some household items.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════ REFERENCES ═══════════════ -->
+  <div class="section-full science-refs-section" data-screen-label="References">
+    <div class="section">
+      <span class="section-label reveal">Sources</span>
+      <h2 class="section-title reveal reveal-delay-1"><em>Key</em> references</h2>
+      <p class="section-desc reveal reveal-delay-2" style="max-width:600px; margin:0 auto 3rem;">A selection of the scientific publications and regulatory documents our claims are based on. The list is updated as new evidence emerges.</p>
+      <div class="refs-list reveal reveal-delay-3">
+        <div class="ref-item">
+          <span class="ref-num">01</span>
+          <div><p class="ref-text">Ragusa, A. et al. (2021). Plasticenta: First evidence of microplastics in human placenta. <em>Environment International</em>, 146, 106274.</p></div>
+        </div>
+        <div class="ref-item">
+          <span class="ref-num">02</span>
+          <div><p class="ref-text">Leslie, H.A. et al. (2022). Discovery and quantification of plastic particle pollution in human blood. <em>Environment International</em>, 163, 107199.</p></div>
+        </div>
+        <div class="ref-item">
+          <span class="ref-num">03</span>
+          <div><p class="ref-text">Quadros, M.E. et al. (2023). Plastic particles released from non-stick cookware during cooking. <em>Environmental Science &amp; Technology</em>.</p></div>
+        </div>
+        <div class="ref-item">
+          <span class="ref-num">04</span>
+          <div><p class="ref-text">Marfella, R. et al. (2024). Microplastics in atherosclerotic plaque and cardiovascular risk. <em>New England Journal of Medicine</em>.</p></div>
+        </div>
+        <div class="ref-item">
+          <span class="ref-num">05</span>
+          <div><p class="ref-text">EPA. (2008). Antimicrobial Copper Alloys — Registration Approval. U.S. Environmental Protection Agency.</p></div>
+        </div>
+        <div class="ref-item">
+          <span class="ref-num">06</span>
+          <div><p class="ref-text">EFSA. (2016). Safety of aluminium from dietary intake — Scientific Opinion. <em>EFSA Journal</em>, 14(10):4582.</p></div>
+        </div>
+        <div class="ref-item">
+          <span class="ref-num">07</span>
+          <div><p class="ref-text">Cliver, D.O. (1994). Plastic and wooden cutting boards. University of California Davis — Food Safety Laboratory.</p></div>
+        </div>
+        <div class="ref-item">
+          <span class="ref-num">08</span>
+          <div><p class="ref-text">Rubin, B.S. et al. (2011). Bisphenol A: An endocrine disruptor with widespread exposure and multiple effects. <em>Journal of Steroid Biochemistry and Molecular Biology</em>.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════ CTA ═══════════════ -->
+  <div class="science-cta" data-screen-label="Science CTA">
+    <span class="section-label reveal">Next step</span>
+    <h2 class="section-title reveal reveal-delay-1" style="margin-bottom:1.5rem;">Ready to make<br>the <em>switch</em>?</h2>
+    <div class="reveal reveal-delay-2" style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+      <a href="index.html#products" class="btn-primary">See the products</a>
+      <a href="about.html" class="btn-secondary">Meet the team</a>
+    </div>
+  </div>
+
+  <!-- ═══════════════ FOOTER ═══════════════ -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name">Biohacks</div>
+        <p class="footer-brand-desc">Home tools that protect your health from the root. Remove toxic materials and replace them with science-backed alternatives.</p>
+      </div>
+      <div>
+        <div class="footer-heading">Products</div>
+        <ul class="footer-links">
+          <li><a href="index.html#products">Stainless Steel</a></li>
+          <li><a href="index.html#products">Copper</a></li>
+          <li><a href="index.html#products">Biodegradables</a></li>
+          <li><a href="index.html#products">View all</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-heading">Company</div>
+        <ul class="footer-links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="science.html">The Science</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-heading">Help</div>
+        <ul class="footer-links">
+          <li><a href="#">Shipping</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Biohacks. All rights reserved.</span>
+      <span>Made with 🌿 for your health</span>
+    </div>
+  </footer>
+
+<script>
+  const header = document.getElementById('site-header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 60);
+  }, { passive: true });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

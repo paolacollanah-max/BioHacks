@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Biohacks — Science-backed tools for a non-toxic home</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ═══════════════ HEADER ═══════════════ -->
+  <header class="site-header" id="site-header">
+    <div class="site-logo">Biohacks</div>
+    <nav>
+      <ul class="site-nav">
+        <li><a href="#products">Products</a></li>
+        <li><a href="science.html">Science</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="#products" class="nav-cta">Shop</a></li>
+        <li>
+          <a href="#" class="cart-icon" aria-label="Cart">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+              <line x1="3" y1="6" x2="21" y2="6"/>
+              <path d="M16 10a4 4 0 01-8 0"/>
+            </svg>
+            <span class="cart-count">0</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ═══════════════ VIDEO HERO ═══════════════ -->
+  <section class="hero" data-screen-label="Hero">
+    <video id="hero-video" class="hero-video" autoplay muted playsinline preload="auto" src="assets/butterfly-forest.mp4"></video>
+    <div class="hero-fallback" aria-hidden="true"></div>
+    <div class="hero-overlay" aria-hidden="true"></div>
+    <div class="hero-greenify" aria-hidden="true"></div>
+
+    <div class="hero-content">
+      <span class="hero-eyebrow">Toxic-burden reduction</span>
+      <h1 class="hero-title">Biohacks</h1>
+      <p class="hero-sub">
+        Home tools that protect your health from the root.
+        Progressively remove toxic materials from your home and
+        replace them with science-backed alternatives.
+      </p>
+      <div class="hero-cta">
+        <a href="#products" class="btn-primary">Explore Products</a>
+        <a href="science.html" class="btn-secondary">The Science</a>
+      </div>
+    </div>
+
+    <div class="scroll-indicator" id="scroll-indicator">
+      <div class="scroll-line"></div>
+      <span>Discover</span>
+    </div>
+  </section>
+
+  <!-- ═══════════════ MISSION STRIP ═══════════════ -->
+  <div class="mission-strip">
+    <div class="mission-item"><span class="mission-icon">🔬</span> Backed by science</div>
+    <div class="mission-item"><span class="mission-icon">🚫</span> No toxins or PFAS</div>
+    <div class="mission-item"><span class="mission-icon">🌿</span> Biodegradable materials</div>
+    <div class="mission-item"><span class="mission-icon">📦</span> Sustainable shipping</div>
+  </div>
+
+  <!-- ═══════════════ FEATURED PRODUCTS ═══════════════ -->
+  <div class="section on-light" id="products" data-screen-label="Products">
+    <div class="products-intro">
+      <div>
+        <span class="section-label reveal">Our Collection</span>
+        <h2 class="section-title reveal reveal-delay-1">Replace the toxic<br>with the <em>smart</em></h2>
+      </div>
+      <div>
+        <p class="section-desc reveal reveal-delay-2">Every product at Biohacks is selected with scientific evidence. Your home is the first environment you can control.</p>
+        <br>
+        <a href="#" class="btn-secondary reveal reveal-delay-3">View full collection</a>
+      </div>
+    </div>
+
+    <div class="products-grid">
+      <div class="product-card reveal">
+        <div class="product-img"><span>🍳</span></div>
+        <div class="product-info">
+          <span class="product-category">Kitchen</span>
+          <div class="product-name">316 Stainless Steel Pan</div>
+          <p class="product-desc">Surgical-grade stainless steel. No PFAS, no Teflon. A lifespan measured in decades.</p>
+          <div class="product-footer">
+            <span class="product-price">€49.90</span>
+            <button class="add-to-cart">Add</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card reveal reveal-delay-1">
+        <div class="product-img"><span>🫙</span><span class="product-badge">Best seller</span></div>
+        <div class="product-info">
+          <span class="product-category">Hydration</span>
+          <div class="product-name">Pure Copper Bottle</div>
+          <p class="product-desc">EPA-certified antimicrobial. Eliminates E. coli and Salmonella from your water.</p>
+          <div class="product-footer">
+            <span class="product-price">€34.90</span>
+            <button class="add-to-cart">Add</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card reveal reveal-delay-2">
+        <div class="product-img"><span>💚</span></div>
+        <div class="product-info">
+          <span class="product-category">Wellness</span>
+          <div class="product-name">Copper Bracelet</div>
+          <p class="product-desc">Transdermal absorption of bioavailable copper. A clean, minimalist design.</p>
+          <div class="product-footer">
+            <span class="product-price">€19.90</span>
+            <button class="add-to-cart">Add</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card reveal reveal-delay-1">
+        <div class="product-img"><span>🥣</span></div>
+        <div class="product-info">
+          <span class="product-category">Kitchen</span>
+          <div class="product-name">Stainless Steel Bowl Set</div>
+          <p class="product-desc">Pack of three sizes. Chemically inert. Dishwasher safe and built to last.</p>
+          <div class="product-footer">
+            <span class="product-price">€39.90</span>
+            <button class="add-to-cart">Add</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card reveal reveal-delay-2">
+        <div class="product-img"><span>🪥</span></div>
+        <div class="product-info">
+          <span class="product-category">Home</span>
+          <div class="product-name">Natural Fiber Brush</div>
+          <p class="product-desc">Removes microplastics as you scrub. 100% biodegradable within six months.</p>
+          <div class="product-footer">
+            <span class="product-price">€12.90</span>
+            <button class="add-to-cart">Add</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card reveal reveal-delay-3">
+        <div class="product-img"><span>🍱</span></div>
+        <div class="product-info">
+          <span class="product-category">Storage</span>
+          <div class="product-name">Stainless Steel Containers</div>
+          <p class="product-desc">No BPA or BPS. Airtight seal. The definitive alternative to plastic.</p>
+          <div class="product-footer">
+            <span class="product-price">€29.90</span>
+            <button class="add-to-cart">Add</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════ SCIENCE SECTION ═══════════════ -->
+  <div class="section-full science-section on-light" id="science" data-screen-label="Science">
+    <div class="science-grid section">
+      <div>
+        <span class="section-label reveal">Scientific Evidence</span>
+        <h2 class="section-title reveal reveal-delay-1">Why change<br>what you <em>use</em> every day?</h2>
+        <p class="section-desc reveal reveal-delay-2">
+          The concept of <strong>household toxic-burden reduction</strong> holds that small changes in the domestic environment have a significant cumulative impact on long-term health.
+        </p>
+        <br><br>
+        <div class="reveal reveal-delay-3">
+          <div style="margin-bottom:1rem">
+            <span class="section-label">Key fact</span>
+            <div style="font-family:var(--font-display); font-size:1.1rem; color:var(--text-mid); line-height:1.7">
+              Humans ingest approximately<br>
+              <span class="science-stat">5 grams</span><br>
+              of plastic per week — the equivalent<br>of a credit card.
+            </div>
+          </div>
+          <p style="font-size:0.72rem; color:var(--text-light); letter-spacing:0.05em">University of Newcastle, 2019 — commissioned by WWF</p>
+        </div>
+      </div>
+      <div class="science-cards">
+        <div class="science-card reveal">
+          <div class="science-card-icon">🍳</div>
+          <div class="science-card-title">Teflon pans</div>
+          <p class="science-card-text">A scratched non-stick pan can release up to <strong>2.3 million plastic microparticles</strong> into food. — Environmental Science &amp; Technology, 2023</p>
+        </div>
+        <div class="science-card reveal reveal-delay-1">
+          <div class="science-card-icon">🫙</div>
+          <div class="science-card-title">Antimicrobial copper</div>
+          <p class="science-card-text">The EPA certifies copper as the only solid metal with registered antimicrobial properties, able to eliminate over <strong>99.9% of bacteria</strong> in under two hours.</p>
+        </div>
+        <div class="science-card reveal reveal-delay-2">
+          <div class="science-card-icon">🧬</div>
+          <div class="science-card-title">Microplastics in arteries</div>
+          <p class="science-card-text">Researchers in the <em>New England Journal of Medicine</em> (2024) found microplastics in arterial plaque, linking them to higher risk of heart attack and stroke.</p>
+        </div>
+        <div class="science-card reveal reveal-delay-3">
+          <div class="science-card-icon">🛡️</div>
+          <div class="science-card-title">316 stainless steel</div>
+          <p class="science-card-text">The EFSA (European Food Safety Authority) classifies surgical stainless steel as <strong>safe for food contact</strong>, chemically inert at high temperatures.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════ COMPARISON TABLE ═══════════════ -->
+  <div class="section compare-section on-light" data-screen-label="Comparison">
+    <span class="section-label reveal">Comparison</span>
+    <h2 class="section-title reveal reveal-delay-1">The <em>smart</em> alternative<br>for every corner of the home</h2>
+    <table class="compare-table reveal reveal-delay-2">
+      <thead>
+        <tr>
+          <th>Plastic / toxic product</th>
+          <th>Biohacks alternative</th>
+          <th>Exposure reduction</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Teflon pans (PTFE)</td>
+          <td class="highlight">✦ 316 Stainless Steel Pan</td>
+          <td><span class="compare-check">✓</span> Eliminates PFAS particles while cooking</td>
+        </tr>
+        <tr>
+          <td>Synthetic kitchen sponges</td>
+          <td class="highlight">✦ Natural Fiber Brush</td>
+          <td><span class="compare-check">✓</span> Removes microplastics while scrubbing</td>
+        </tr>
+        <tr>
+          <td>Plastic tubs &amp; containers</td>
+          <td class="highlight">✦ Steel Bowls &amp; Containers</td>
+          <td><span class="compare-check">✓</span> Eliminates BPA and BPS migration</td>
+        </tr>
+        <tr>
+          <td>Plastic bottles</td>
+          <td class="highlight">✦ Pure Copper Bottle</td>
+          <td><span class="compare-check">✓</span> Eliminates PFAS and microplastics</td>
+        </tr>
+        <tr>
+          <td>Plastic accessories</td>
+          <td class="highlight">✦ Copper Bracelet</td>
+          <td><span class="compare-check">✓</span> Provides bioavailable copper</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ═══════════════ TESTIMONIALS ═══════════════ -->
+  <div class="section-full testimonials-section on-light" data-screen-label="Testimonials">
+    <div class="section">
+      <span class="section-label reveal">Testimonials</span>
+      <h2 class="section-title reveal reveal-delay-1">What our<br><em>community</em> says</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card reveal">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">I used Teflon pans for years without knowing the risks. Since switching to Biohacks steel, I feel so much calmer cooking for my family.</p>
+          <div class="testimonial-author">María G.</div>
+          <div class="testimonial-location">Madrid · Customer since 2024</div>
+        </div>
+        <div class="testimonial-card reveal reveal-delay-1">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">The copper bottle is incredible. I noticed the difference in the water's taste from day one. And the design is beautiful — I take it everywhere.</p>
+          <div class="testimonial-author">Carlos M.</div>
+          <div class="testimonial-location">Barcelona · Customer since 2024</div>
+        </div>
+        <div class="testimonial-card reveal reveal-delay-2">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">I love that every product comes with the scientific evidence behind it. It's not empty marketing — it's real information. My home is 80% toxic-free in three months.</p>
+          <div class="testimonial-author">Laura P.</div>
+          <div class="testimonial-location">Valencia · Customer since 2023</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════ MANIFESTO ═══════════════ -->
+  <div class="manifesto-section" data-screen-label="Manifesto">
+    <p class="manifesto-quote reveal">
+      "The home is the first environment you can control.<br>Start with what you touch and what you cook."
+    </p>
+    <div class="manifesto-author reveal reveal-delay-1">— The Biohacks approach</div>
+    <br><br>
+    <a href="#products" class="btn-secondary reveal reveal-delay-2">Start your transformation</a>
+  </div>
+
+  <!-- ═══════════════ FOOTER ═══════════════ -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name">Biohacks</div>
+        <p class="footer-brand-desc">Home tools that protect your health from the root. Remove toxic materials and replace them with science-backed alternatives.</p>
+      </div>
+      <div>
+        <div class="footer-heading">Products</div>
+        <ul class="footer-links">
+          <li><a href="#products">Stainless Steel</a></li>
+          <li><a href="#products">Copper</a></li>
+          <li><a href="#products">Biodegradables</a></li>
+          <li><a href="#products">View all</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-heading">Company</div>
+        <ul class="footer-links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="science.html">The Science</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-heading">Help</div>
+        <ul class="footer-links">
+          <li><a href="#">Shipping</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Biohacks. All rights reserved.</span>
+      <span>Made with 🌿 for your health</span>
+    </div>
+  </footer>
+
+<script>
+  /* ── Seamless video loop with invisible breath-of-light fade ── */
+  const video = document.getElementById('hero-video');
+  const FADE_START_BEFORE_END = 1.5;
+  video.addEventListener('timeupdate', () => {
+    if (!video.duration || isNaN(video.duration)) return;
+    const timeLeft = video.duration - video.currentTime;
+    if (timeLeft <= FADE_START_BEFORE_END) {
+      const progress = 1 - (timeLeft / FADE_START_BEFORE_END);
+      video.style.opacity = 1 - (Math.sin(progress * Math.PI) * 0.15); // never below 0.85
+    } else {
+      video.style.opacity = 1;
+    }
+  });
+  video.addEventListener('ended', () => { video.currentTime = 0; video.play(); });
+
+  /* ── Autoplay guard / mobile fallback ── */
+  function tryPlay() {
+    const p = video.play();
+    if (p && typeof p.catch === 'function') p.catch(() => document.body.classList.add('use-fallback'));
+  }
+  tryPlay();
+  setTimeout(() => { if (video.readyState < 2 && video.paused) tryPlay(); }, 1200);
+  video.addEventListener('error', () => document.body.classList.add('use-fallback'));
+
+  /* ── Header scroll state ── */
+  const header = document.getElementById('site-header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 60);
+  }, { passive: true });
+
+  /* ── Scroll indicator fades after leaving hero ── */
+  const indicator = document.getElementById('scroll-indicator');
+  window.addEventListener('scroll', () => {
+    indicator.classList.toggle('hidden', window.scrollY > window.innerHeight * 0.4);
+  }, { passive: true });
+
+  /* ── Reveal on scroll ── */
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  /* ── Add-to-cart feedback ── */
+  let cartCount = 0;
+  const cartCountEl = document.querySelector('.cart-count');
+  document.querySelectorAll('.add-to-cart').forEach(btn => {
+    btn.addEventListener('click', function () {
+      const original = this.textContent;
+      this.textContent = '✓ Added';
+      this.style.background = '#5a9a50';
+      cartCount += 1;
+      if (cartCountEl) cartCountEl.textContent = cartCount;
+      setTimeout(() => { this.textContent = original; this.style.background = ''; }, 1600);
+    });
+  });
+</script>
+</body>
+</html>

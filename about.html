@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>About — Biohacks</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<style>
+  /* === ABOUT HERO === */
+  .about-hero {
+    padding: 160px 0 80px;
+    background: linear-gradient(160deg, var(--sage-pale) 0%, var(--cream) 60%);
+    position: relative;
+    overflow: hidden;
+  }
+  .about-hero::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 420px; height: 420px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(160,210,150,0.25) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .about-hero-content { max-width: 760px; }
+  .about-hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 500;
+    color: var(--forest);
+    line-height: 1.15;
+    margin: 1rem 0 1.5rem;
+  }
+  .about-hero-title em { font-style: italic; color: var(--forest-mid); }
+  .about-hero-sub {
+    font-size: 1.15rem;
+    color: var(--text-mid);
+    line-height: 1.8;
+    max-width: 580px;
+  }
+
+  /* === ORIGIN === */
+  .about-origin { padding: 6rem 3rem; }
+  .about-origin-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+  .about-body {
+    font-size: 0.95rem;
+    color: var(--text-mid);
+    line-height: 1.9;
+    margin-bottom: 1.2rem;
+  }
+  .about-origin-visual {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  .about-stat-block {
+    background: white;
+    border: 1px solid var(--sage-light);
+    border-radius: 8px;
+    padding: 1.8rem 1.4rem;
+    text-align: center;
+  }
+  .about-stat-num {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: var(--forest);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+  .about-stat-label {
+    font-size: 0.75rem;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    line-height: 1.4;
+  }
+
+  /* === VALUES === */
+  .about-values-section { background: linear-gradient(135deg, #f0f7ed 0%, #e4f0df 100%); }
+  .about-values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+  .about-value-card {
+    background: white;
+    border-radius: 8px;
+    padding: 2.2rem 2rem;
+    border-top: 3px solid var(--sage);
+    transition: all var(--transition);
+  }
+  .about-value-card:hover {
+    border-top-color: var(--forest);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(45,90,39,0.1);
+  }
+  .about-value-icon { font-size: 1.8rem; margin-bottom: 1rem; }
+  .about-value-title {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--forest);
+    margin-bottom: 0.8rem;
+  }
+  .about-value-text { font-size: 0.875rem; color: var(--text-mid); line-height: 1.8; }
+
+  /* === TEAM === */
+  .about-team { padding: 6rem 3rem; text-align: center; max-width: 1300px; margin: 0 auto; }
+  .about-team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 0;
+    text-align: left;
+  }
+  .about-team-card {
+    padding: 2rem;
+    border-left: 3px solid var(--sage);
+    transition: all var(--transition);
+  }
+  .about-team-card:hover { border-left-color: var(--forest); transform: translateX(6px); }
+  .about-team-avatar { font-size: 2rem; margin-bottom: 1rem; }
+  .about-team-name {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--forest);
+    margin-bottom: 0.6rem;
+  }
+  .about-team-role { font-size: 0.85rem; color: var(--text-mid); line-height: 1.8; }
+
+  /* === CTA FINAL === */
+  .about-cta-section { background: var(--forest); padding: 5rem 3rem; }
+  .about-cta-section .section-label { color: var(--sage); }
+  .about-cta-section .section-title { color: white; }
+  .about-cta-section .section-title em { color: var(--sage-light); }
+  .about-cta-section .section-desc { color: rgba(255,255,255,0.75); }
+  .about-cta-section .btn-primary { background: white; color: var(--forest); border-color: white; }
+  .about-cta-section .btn-primary:hover { background: var(--sage-pale); border-color: var(--sage-pale); }
+  .about-cta-section .btn-secondary {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.4);
+    color: white;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+  .about-cta-section .btn-secondary:hover { background: rgba(255,255,255,0.14); border-color: white; color: white; }
+
+  @media (max-width: 900px) {
+    .about-origin-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .about-values-grid { grid-template-columns: 1fr; }
+    .about-team-grid { grid-template-columns: 1fr; }
+    .about-origin-visual { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 600px) {
+    .about-hero { padding: 120px 1.5rem 60px; }
+    .about-origin, .about-team, .about-cta-section { padding-left: 1.5rem; padding-right: 1.5rem; }
+    .about-origin-visual { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body class="inner-page on-light">
+
+  <!-- ═══════════════ HEADER ═══════════════ -->
+  <header class="site-header" id="site-header">
+    <a href="index.html" class="site-logo">Biohacks</a>
+    <nav>
+      <ul class="site-nav">
+        <li><a href="index.html#products">Products</a></li>
+        <li><a href="science.html">Science</a></li>
+        <li><a href="about.html" aria-current="page">About</a></li>
+        <li><a href="index.html#products" class="nav-cta">Shop</a></li>
+        <li>
+          <a href="#" class="cart-icon" aria-label="Cart">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+              <line x1="3" y1="6" x2="21" y2="6"/>
+              <path d="M16 10a4 4 0 01-8 0"/>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ═══════════════ HERO ═══════════════ -->
+  <section class="about-hero" data-screen-label="About hero">
+    <div class="about-hero-content section">
+      <span class="section-label">Our Story</span>
+      <h1 class="about-hero-title">Biohacks began with<br>an <em>honest question</em></h1>
+      <p class="about-hero-sub">What are we putting into our bodies every time we cook, drink, or clean?</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════ ORIGIN ═══════════════ -->
+  <div class="about-origin" data-screen-label="Origin">
+    <div class="about-origin-grid">
+      <div class="about-origin-text">
+        <span class="section-label reveal">The origin</span>
+        <h2 class="section-title reveal reveal-delay-1">A home without<br><em>hidden</em> toxins</h2>
+        <p class="about-body reveal reveal-delay-2">It all started with a non-stick pan. While investigating what happened when the Teflon got scratched, we found something unsettling: millions of plastic microparticles could end up in food. And that was only the beginning.</p>
+        <p class="about-body reveal reveal-delay-3">The more questions we asked, the more uncomfortable answers appeared — plastics in baby bottles, heavy metals leaching from cheap bottles, biocides in sponges. The problem wasn't the food we bought; it was the materials we prepared it with.</p>
+        <p class="about-body reveal reveal-delay-3">Biohacks was born to close that gap: to offer real, scientifically verified alternatives for every corner of the home.</p>
+      </div>
+      <div class="about-origin-visual reveal reveal-delay-2">
+        <div class="about-stat-block">
+          <span class="about-stat-num">2021</span>
+          <span class="about-stat-label">Year founded</span>
+        </div>
+        <div class="about-stat-block">
+          <span class="about-stat-num">+40</span>
+          <span class="about-stat-label">Curated products</span>
+        </div>
+        <div class="about-stat-block">
+          <span class="about-stat-num">100%</span>
+          <span class="about-stat-label">Plastic-free in food contact</span>
+        </div>
+        <div class="about-stat-block">
+          <span class="about-stat-num">0</span>
+          <span class="about-stat-label">Compromises with low-standard suppliers</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════ BRAND BAND ═══════════════ -->
+  <section class="brand-band" data-screen-label="Brand band">
+    <img src="assets/biohacks-forest.png" alt="Biohacks — herramientas de hogar que protegen tu salud desde la raíz" loading="lazy" />
+  </section>
+
+  <!-- ═══════════════ VALUES ═══════════════ -->
+  <div class="section-full about-values-section" data-screen-label="Values">
+    <div class="section">
+      <span class="section-label reveal">What drives us</span>
+      <h2 class="section-title reveal reveal-delay-1">Three principles that<br>guide <em>every decision</em></h2>
+      <div class="about-values-grid">
+        <div class="about-value-card reveal">
+          <div class="about-value-icon">🔬</div>
+          <h3 class="about-value-title">Evidence first</h3>
+          <p class="about-value-text">No product enters our catalog without scientific backing. We review studies, certifications, and international regulations before making any recommendation.</p>
+        </div>
+        <div class="about-value-card reveal reveal-delay-1">
+          <div class="about-value-icon">🌿</div>
+          <h3 class="about-value-title">Materials with history</h3>
+          <p class="about-value-text">316 stainless steel, copper, teak wood, borosilicate glass. Materials humans have used safely for centuries — versus synthetic polymers with barely a few decades of history.</p>
+        </div>
+        <div class="about-value-card reveal reveal-delay-2">
+          <div class="about-value-icon">🤝</div>
+          <h3 class="about-value-title">Radical transparency</h3>
+          <p class="about-value-text">We explain exactly why each product is better. No marketing exaggeration. If there's a limitation or a nuance, we say so. A well-informed customer is the best customer.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════ TEAM ═══════════════ -->
+  <div class="about-team" data-screen-label="Team">
+    <span class="section-label reveal">Who we are</span>
+    <h2 class="section-title reveal reveal-delay-1">A small team<br>with a <em>clear obsession</em></h2>
+    <p class="section-desc reveal reveal-delay-2" style="max-width:680px; margin: 0 auto 3.5rem;">We're not a corporation. We're a group of people who first applied these changes in our own homes, then built Biohacks to share what we learned.</p>
+    <div class="about-team-grid">
+      <div class="about-team-card reveal">
+        <div class="about-team-avatar">🌱</div>
+        <h3 class="about-team-name">Research &amp; Curation</h3>
+        <p class="about-team-role">We continuously review the scientific literature to update our selections. Every relevant new study can change what we recommend.</p>
+      </div>
+      <div class="about-team-card reveal reveal-delay-1">
+        <div class="about-team-avatar">📦</div>
+        <h3 class="about-team-name">Supplier Selection</h3>
+        <p class="about-team-role">We visit, audit, and test every supplier. We prioritize manufacturers with LFGB, FDA, or equivalent certifications. Promises without paperwork don't count.</p>
+      </div>
+      <div class="about-team-card reveal reveal-delay-2">
+        <div class="about-team-avatar">💬</div>
+        <h3 class="about-team-name">Community &amp; Education</h3>
+        <p class="about-team-role">The blog, the guides, and the product pages are central to what we do. We want you to understand the why behind every choice — not to trust us blindly.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════ CTA ═══════════════ -->
+  <div class="section-full about-cta-section" data-screen-label="About CTA">
+    <div class="section" style="text-align:center;">
+      <span class="section-label reveal">The next step</span>
+      <h2 class="section-title reveal reveal-delay-1">Start where it has<br>the most <em>impact</em></h2>
+      <p class="section-desc reveal reveal-delay-2" style="max-width:560px; margin: 0 auto 2.5rem;">The kitchen is the starting point. It's where your utensils and your food are in the most direct contact.</p>
+      <div class="reveal reveal-delay-3" style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+        <a href="index.html#products" class="btn-primary">See the products</a>
+        <a href="science.html" class="btn-secondary">Read the science</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════ FOOTER ═══════════════ -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name">Biohacks</div>
+        <p class="footer-brand-desc">Home tools that protect your health from the root. Remove toxic materials and replace them with science-backed alternatives.</p>
+      </div>
+      <div>
+        <div class="footer-heading">Products</div>
+        <ul class="footer-links">
+          <li><a href="index.html#products">Stainless Steel</a></li>
+          <li><a href="index.html#products">Copper</a></li>
+          <li><a href="index.html#products">Biodegradables</a></li>
+          <li><a href="index.html#products">View all</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-heading">Company</div>
+        <ul class="footer-links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="science.html">The Science</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-heading">Help</div>
+        <ul class="footer-links">
+          <li><a href="#">Shipping</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Biohacks. All rights reserved.</span>
+      <span>Made with 🌿 for your health</span>
+    </div>
+  </footer>
+
+<script>
+  const header = document.getElementById('site-header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 60);
+  }, { passive: true });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
